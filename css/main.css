@@ -1,2 +1,39 @@
 @charset "utf-8";
 
+#wrap main {
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+}
+
+#wrap main>div[class*=question] {
+    width: 80%;
+    height: 500px;
+    background: #e7e7e7;
+}
+
+ul.tabs li {
+    background: none;
+    color: #222;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+ul.tabs li.current {
+    background: #ededed;
+    color: #222;
+}
+
+.tab-content {
+    display: none;
+    background: #ededed;
+    padding: 15px;
+}
+
+.tab-content.current {
+    display: inherit;
+}

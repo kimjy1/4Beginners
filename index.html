@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script/main.js"></script>
   <title>Main Page</title>
 </head>
 
@@ -23,10 +25,10 @@
       </div>
       <div class="menu">
         <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JAVASCRIPT</li>
-          <li>JQUERY</li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JAVASCRIPT</a></li>
+          <li><a href="#">JQUERY</a></li>
         </ul>
       </div>
       <div class="option">
@@ -41,9 +43,23 @@
       </div>
     </header>
     <main>
-      <div class="section"></div>
-      <div class="section"></div>
-      <div class="section"></div>
+
+      <div class="question random">
+        <h2></h2>
+        <ul class="tabs">
+          <li class="tab-link current" data-tab="tab-1">퀴즈1</li>
+          <li class="tab-link" data-tab="tab-2">퀴즈2</li>
+          <li class="tab-link" data-tab="tab-3">퀴즈3</li>
+        </ul>
+        <div id="tab-1" class="tab-content current">퀴즈1</div>
+        <div id="tab-2" class="tab-content">퀴즈2</div>
+        <div id="tab-3" class="tab-content">퀴즈3</div>
+      </div>
+
+      <div class="question">
+        <h2>추가된 문제</h2>
+      </div>
+
     </main>
     <footer>© 2022 All Rights Reserved.</footer>
   </div>
