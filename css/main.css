@@ -13,6 +13,14 @@
     width: 80%;
     height: 500px;
     background: #e7e7e7;
+    box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 30%);
+}
+
+#wrap main>div:nth-of-type(2){
+    background: none;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
 }
 
 ul.tabs li {

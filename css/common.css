@@ -8,26 +8,42 @@
 /* 공통 - 헤더 기본 설정 */
 #wrap header {
     width: 100%;
+    /* max-width: 80%; */
     height: 100px;
+    /* margin: 0 auto; */
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
     align-items: center;
 }
 
 #wrap header div {
-    width: 500px;
+    /* width: 25%; */
+    width: 17%;
     height: 100px;
 }
 
 #wrap header div[class*=home] {
     display: flex;
     align-items: center;
+    background: url(../img/day_logo.png) no-repeat left center / 100%;
+    width: 8vw;
+    cursor: pointer;
+    transition: all 0.5s;
 }
 
-#wrap header div[class*=home] img {
+/* #wrap header div[class*=home] img {
     width: 160px;
     height: 64px;
-    cursor: pointer;
+    
+} */
+
+#wrap header div[class*=home]:hover {
+    background-image: url(../img/hover_day_logo.png);
+}
+
+#wrap header div[class*=menu] {
+    width: 25%;
 }
 
 #wrap header div[class*=menu] ul {
@@ -39,11 +55,12 @@
 
 #wrap header div[class*=menu] ul li a {
     color: #000;
+    font-weight: bold;
     cursor: pointer;
 }
 
 #wrap header div[class*=menu] ul li a:hover {
-    font-weight: bold;
+    color: #82a584;
 }
 
 #wrap header div[class*=option] ul {
@@ -53,17 +70,52 @@
     align-items: center;
 }
 
-#wrap header div[class*=option] ul li {
+/* #wrap header div[class*=option] ul li {
     border-radius: 50%;
     box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
     transition: all 0.5s;
+} */
+
+#wrap header div[class*=option] ul li {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
+    transition: all 0.5s;
+    background: no-repeat center center / 100%;
+    cursor: pointer;
 }
+
+#wrap header div[class*=option] ul li:nth-of-type(1) {
+    background-image: url(../img/search.png);
+}
+
+#wrap header div[class*=option] ul li:nth-of-type(1):hover {
+    background-image: url(../img/hover_search.png);
+}
+
+#wrap header div[class*=option] ul li:nth-of-type(2) {
+    background-image: url(../img/language.png);
+}
+
+#wrap header div[class*=option] ul li:nth-of-type(2):hover {
+    background-image: url(../img/hover_language.png);
+}
+
+#wrap header div[class*=option] ul li:nth-of-type(3) {
+    background-image: url(../img/nightmode.png);
+}
+
+#wrap header div[class*=option] ul li:nth-of-type(3):hover {
+    background-image: url(../img/hover_nightmode.png);
+}
+
 
 #wrap header div[class*=option] ul li:hover {
     box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 20%);
 }
 
-#wrap header div[class*=option] ul li img {
+/* #wrap header div[class*=option] ul li img {
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -71,10 +123,10 @@
 
 #wrap header div[class*=option] ul li img:nth-of-type(2) {
     display: none;
-}
+} */
 
 
-
+/* 공통 - 푸터 기본 설정 */
 #wrap footer {
     width: 100%;
     height: 100px;
