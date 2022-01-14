@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* 메인 - 퀴즈 섹션 / 첫 번째  */
 #wrap main {
     width: 100%;
     height: 1200px;
@@ -16,7 +17,9 @@
     box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 30%);
 }
 
-#wrap main>div:nth-of-type(2){
+
+/* 메인 - 퀴즈 섹션 / 두 번째  */
+#wrap main>div:nth-of-type(2) {
     background: none;
     box-shadow: none;
     display: flex;
