@@ -14,25 +14,25 @@ let aTag = document.querySelectorAll("a");
 let divTag = document.querySelectorAll("div");
 let liTag = document.querySelectorAll("li");
 let logo = document.querySelector(".home");
-let search = document.getElementById("search");
-let language = document.getElementById("language");
+let search = document.querySelector("label:nth-of-type(1)");
+let language = document.querySelector("label:nth-of-type(2)");
 
 document.querySelector("#nightmode").addEventListener("click", function () {
     if (this.checked == true) {
         document.querySelector("body").style.backgroundColor = "#000";
         document.querySelector("body").style.color = "#fff";
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < aTag.length; i++) {
             aTag[i].style.color = "#fff";
             divTag[i].style.color = "#fff";
             liTag[i].style.color = "#fff";
             logo.style.backgroundImage = "url(../img/night_logo.png)";
-            search.style.backgroundImage = "url(../img/night_search.png)";
-            language.style.backgroundImage = "url(../img/night_language.png)";
+            search.style.backgroundImage = "url(../img/nightmode_search.png)";
+            language.style.backgroundImage = "url(../img/nightmode_language.png)";
         }
     } else if (this.checked == false) {
         document.querySelector("body").style.backgroundColor = "#fff";
         document.querySelector("body").style.color = "#000";
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < aTag.length; i++) {
             aTag[i].style.color = "#000";
             divTag[i].style.color = "#000";
             liTag[i].style.color = "#000";
