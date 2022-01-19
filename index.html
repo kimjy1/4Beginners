@@ -12,7 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="script/main.js"></script>
   <title>Main Page</title>
 </head>
 
@@ -26,15 +25,18 @@
           <li><a href="#">게시판</a></li>
           <li><a href="#">공지사항</a></li>
           <li><a href="#">문제</a></li>
-          <li><a href="sub.html">목록1</a></li>
+          <li><a href="sub.html">편집기</a></li>
         </ul>
       </div>
       <div class="option">
-        <ul>
-          <li></li><!-- html -->
-          <li></li><!-- css -->
-          <li></li><!-- javascript -->
-        </ul>
+        <div>
+          <input type="checkbox" id="search">
+          <label for="search"></label>
+          <input type="checkbox" id="language">
+          <label for="language"></label>
+          <input type="checkbox" id="nightmode">
+          <label for="nightmode"></label>
+        </div>
       </div>
     </header>
     <main>
@@ -59,6 +61,7 @@
     <footer>© 2022 4Beginners. All Rights Reserved.</footer>
   </div>
 
+  <script src="script/main.js" defer></script>
 </body>
 
 </html>
