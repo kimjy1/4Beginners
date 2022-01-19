@@ -27,10 +27,6 @@
     cursor: pointer;
 }
 
-#wrap header div[class*=home]:hover {
-    background-image: url(../img/hover_day_logo.png);
-}
-
 #wrap header div[class*=menu] {
     width: 39%;
 }
