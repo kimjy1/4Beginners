@@ -41,16 +41,22 @@
     </header>
     <main>
 
-      <div class="question random">
-        <h2></h2>
-        <ul class="tabs">
-          <li class="tab-link current" data-tab="tab-1">퀴즈1</li>
-          <li class="tab-link" data-tab="tab-2">퀴즈2</li>
-          <li class="tab-link" data-tab="tab-3">퀴즈3</li>
-        </ul>
-        <div id="tab-1" class="tab-content current">퀴즈1</div>
-        <div id="tab-2" class="tab-content">퀴즈2</div>
-        <div id="tab-3" class="tab-content">퀴즈3</div>
+      <div class="grid">
+        <h1>퀴즈</h1>
+        <div id="quiz">
+          <p id="question"></p>
+    
+          <div class="buttons">
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+          </div>
+    
+          <footer>
+            <p id="progress">진행 정보</p>
+          </footer>
+        </div>
       </div>
 
       <div class="question textEditor">
