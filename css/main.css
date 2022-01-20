@@ -81,30 +81,9 @@
 
 /* 메인 - 퀴즈 섹션 / 두 번째  */
 #wrap main>div:nth-of-type(2) {
-    background: none;
-    box-shadow: none;
     display: flex;
-    justify-content: center;
-}
-
-ul.tabs li {
-    background: none;
-    display: inline-block;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-ul.tabs li.current {
-    background: #ededed;
-}
-
-.tab-content {
-    display: none;
-    background: #ededed;
-    padding: 15px;
-}
-
-.tab-content.current {
-    display: inherit;
-    background: center center;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: none;
 }

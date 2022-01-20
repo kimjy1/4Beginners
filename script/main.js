@@ -20,7 +20,7 @@ Quiz.prototype.correctAnswer = function (answer) {
 let questions = [
     new Question('다음 중 최초의 상용 웹 브라우저는?', ['모자이크', '인터넷 익스플로러', '구글 크롬', '넷스케이프 네비게이터'], '넷스케이프 네비게이터'),
     new Question('웹 문서에서 스타일을 작성하는 언어는?', ['HTML', 'jQuery', 'CSS', 'XML'], 'CSS'),
-    new Question('명령어 기반의 인퍼페이스를 의미하는 용어는?', ['GUI', 'CLI', 'HUD', 'SI'], 'CLI'),
+    new Question('명령어 기반의 인터페이스를 의미하는 용어는?', ['GUI', 'CLI', 'HUD', 'SI'], 'CLI'),
     new Question('CSS 속성 중 글자의 굵기를 변경하는 속성은?', ['font-size', 'font-style', 'font-weight', 'font-letiant'], 'font-weight'),
     new Question("보기에 주어진 수학 객체 중 정수를 변환하지 않는 객체는?", ["Math.random()", "Math.round()", "Math.ceil()", "Math.floor()"], "Math.random()"),
     new Question("다음 HTML 태그 중 종료태그가 필요없는 요소는?", ["li", "p", "tr", "input"], "input"),
@@ -116,6 +116,7 @@ const liTag = document.querySelectorAll("li");
 const logo = document.querySelector(".home");
 const search = document.querySelector("label:nth-of-type(1)");
 const language = document.querySelector("label:nth-of-type(2)");
+const quizcontainer = document.querySelector(".grid");
 
 // 다크모드 이벤트 시작
 document.querySelector("#nightmode").addEventListener("click", function () {
@@ -129,6 +130,8 @@ document.querySelector("#nightmode").addEventListener("click", function () {
             logo.style.backgroundImage = "url(../img/night_logo.png)";
             search.style.backgroundImage = "url(../img/nightmode_search.png)";
             language.style.backgroundImage = "url(../img/nightmode_language.png)";
+            // quizcontainer.style.boxShadow = "0px 0px 0px  rgba(0, 0, 0 / 0%);";
+            console.log(quizcontainer);
         }
     } else if (this.checked == false) {
         document.querySelector("body").style.backgroundColor = "#fff";
@@ -140,6 +143,7 @@ document.querySelector("#nightmode").addEventListener("click", function () {
             logo.style.backgroundImage = "url(../img/day_logo.png)";
             search.style.backgroundImage = "url(../img/search.png)";
             language.style.backgroundImage = "url(../img/language.png)";
+            // quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb;";
         }
     }
 })
