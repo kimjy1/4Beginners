@@ -10,80 +10,68 @@
     justify-content: center;
 }
 
-#wrap main>div[class*=question] {
-    width: 80%;
-    height: 500px;
-    background: #e7e7e7;
-    box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 30%);
-}
-
-.grid {
-    width: 800px;
-    padding: 10px 50px 30px;
-    margin: 5% auto;
-    /* background: #fff; */
+.quiz-container {
+    width: 100%;
+    max-width: 80%;
+    height: 600px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
     border: 2px solid #82a584;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #cbcbcb;
 }
 
-.grid h1 {
-    color: #333;
+.quiz-container>h1 {
     font-size: 2.4em;
-    text-align: center;
 }
 
-#question {
-    padding: 10px 2em;
-    background: salmon;
-    border-radius: 15px;
-    font-size: 24px;
-    color: #fff;
+.quiz-container>#question {
+    font-size: 1.3rem;
 }
 
-#quiz {
-    text-align: center;
-}
-
-#progress {
-    font-size: 20px;
-    color: #2b2b2b;
-}
-
-.buttons {
-    padding: 30px 20px;
+.quiz-container>div[class*=container] {
+    width: 80%;
+    height: 300px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 50px;
     border: 2px solid #82a584;
     border-radius: 20px;
 }
 
-.btn {
-    margin: 10px 40px 20px 0;
-    padding: 10px;
-    width: 250px;
-    font-size: 16px;
-    color: #333;
-    background: #eed0dc;
-    border: 1px solid #ffe3ed;
+.quiz-container>div[class*=container]>button {
+    width: 40%;
+    height: 50px;
+    background: #E28180;
+    border: 1px solid #E28180;
     border-radius: 15px;
     cursor: pointer;
     transition: all .2s;
 }
 
-.btn:nth-child(2n) {
-    margin-right: 0;
-}
-
-.btn:hover {
-    background: #c34c74;
+.quiz-container>div[class*=container]>button:hover {
+    background: #38A450;
+    border: 1px solid #38A450;
     color: #fff;
 }
 
+.quiz-container>p#progress {
+    font-size: 1.4em;
+}
 
 /* 메인 - 퀴즈 섹션 / 두 번째  */
-#wrap main>div:nth-of-type(2) {
+#wrap main>div[class*=question] {
+    width: 80%;
+    height: 500px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: none;
+    background: #e7e7e7;
+    box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 30%);
 }
