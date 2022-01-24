@@ -1,73 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"
+      integrity="sha512-JpMCZgesTWh1iu/8ujURbwkJBgbgFWe3sTNCHdIuEvPwZuuN0nTUr2yawXahpgdEK7FOZUlW254Rp7AyDYJdjg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- 코드미러 스타일(필수) CDN  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css"
+      integrity="sha512-CCnciBUnVXwa6IQT9q8EmGcarNit9GdKI5nJnj56B1iu0LuD13Qn/GZ+IUkrZROZaBdutN718NK6mIXdUjZGqg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- 테마(스킨) 기능 CDN  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/darcula.min.css"
+      integrity="sha512-kqCOYFDdyQF4JM8RddA6rMBi9oaLdR0aEACdB95Xl1EgaBhaXMIe8T4uxmPitfq4qRmHqo+nBU2d1l+M4zUx1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- 괄호 자동 닫기 기능 CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/addon/edit/closebrackets.min.js"
+      integrity="sha512-cCnOU69ESswPmMV3f9TR7WgctoJZliqGbJ8WeLn0VlUrngSsmtVopRf6OG/epbURGfNmY4RY6RzZ/mWkPQ/onw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/addon/edit/matchbrackets.min.js"
+      integrity="sha512-03Ei8A+mDhwF6O/CmXM47U4A9L7TobAxMbPV2Wn5cEbY76lngHQRyvvmnqhJ8IthfoxrRqmtoBxQCxOC7AOeKw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/addon/hint/show-hint.min.js"
+      integrity="sha512-kCn9g92k3GM90eTPGMNwvpCAtLmvyqbpvrdnhm0NMt6UEHYs+DjRO4me8VcwInLWQ9azmamS1U1lbQV627/TBQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/addon/hint/show-hint.min.css"
+      integrity="sha512-OmcLQEy8iGiD7PSm85s06dnR7G7C9C0VqahIPAj/KHk5RpOCmnC6R2ob1oK4/uwYhWa9BF1GC6tzxsC8TIx7Jg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/addon/hint/javascript-hint.min.js"
+      integrity="sha512-HB0sEfERI4Pe2z7rbx7JVGS0SEEGbnAbV+9X0bs3Hs9R/nCYartwJQg16bK1P0jPsMzbiXjT+kYNHYLCsHQ8HA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Main Page</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-  <title>Main Page</title>
-</head>
-
-<body>
-
-  <div id="wrap">
-    <header>
-      <div class="home"></div>
-      <div class="menu">
-        <ul>
-          <li><a href="#">게시판</a></li>
-          <li><a href="#">공지사항</a></li>
-          <li><a href="#">문제</a></li>
-          <li><a href="sub.html">편집기</a></li>
-        </ul>
-      </div>
-      <div class="option">
-        <div>
-          <input type="checkbox" id="search">
-          <label for="search"></label>
-          <input type="checkbox" id="language">
-          <label for="language"></label>
-          <input type="checkbox" id="nightmode">
-          <label for="nightmode"></label>
+  <body>
+    <div id="wrap">
+      <header>
+        <div class="home"></div>
+        <div class="menu">
+          <ul>
+            <li><a href="#">게시판</a></li>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">문제</a></li>
+            <li><a href="sub.html">편집기</a></li>
+          </ul>
         </div>
-      </div>
-    </header>
-    <main>
-
-      <!-- <input type="search" id=""> -->
-
-      <div class="quiz-container">
-        <h1>퀴즈</h1>
-        <p id="question"></p>
-
-        <div class="button-container">
-          <button type="button" class="btn"></button>
-          <button type="button" class="btn"></button>
-          <button type="button" class="btn"></button>
-          <button type="button" class="btn"></button>
-
+        <div class="option">
+          <div>
+            <input type="checkbox" id="search" />
+            <label for="search"></label>
+            <input type="checkbox" id="language" />
+            <label for="language"></label>
+            <input type="checkbox" id="nightmode" />
+            <label for="nightmode"></label>
+          </div>
         </div>
-        <p id="progress">진행 정보</p>
-      </div>
+      </header>
+      <main>
+        <!-- <input type="search" id=""> -->
 
-      <div class="question textEditor">
-        <h2>추가된 문제</h2>
-        <p>Javascript 2문제 추가</p>
-        <p>HTML 3문제 추가</p>
-        <p>CSS 3문제 추가</p>
-      </div>
+        <div class="quiz-container">
+          <h1>퀴즈</h1>
+          <p id="question"></p>
 
-    </main>
-    <footer>© 2022 4Beginners. All Rights Reserved.</footer>
-  </div>
+          <div class="button-container">
+            <button type="button" class="btn"></button>
+            <button type="button" class="btn"></button>
+            <button type="button" class="btn"></button>
+            <button type="button" class="btn"></button>
+          </div>
+          <p id="progress">진행 정보</p>
+        </div>
 
-  <script src="script/main.js" defer></script>
-</body>
+        <div class="question textEditor">
+          <h2>추가된 문제</h2>
+          <p>Javascript 2문제 추가</p>
+          <p>HTML 3문제 추가</p>
+          <p>CSS 3문제 추가</p>
+        </div>
+      </main>
+      <footer>© 2022 4Beginners. All Rights Reserved.</footer>
+    </div>
 
+    <script src="script/main.js" defer></script>
+  </body>
 </html>
