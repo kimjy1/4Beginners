@@ -65,13 +65,35 @@
 }
 
 /* 메인 - 퀴즈 섹션 / 두 번째  */
-#wrap main > div[class*="question"] {
+#wrap main > div[class*="solution"] {
   width: 80%;
   height: 500px;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
   background: #e7e7e7;
   box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 30%);
+}
+
+#wrap main > div[class*="solution"] > h2 {
+  width: 100%;
+  text-align: center;
+}
+
+#wrap main > div[class*="solution"] > div[class*="guide"] {
+  width: 50%;
+  height: 450px;
+  background: yellow;
+}
+
+#wrap main > div[class*="solution"] > #editor {
+  position: relative;
+}
+
+#wrap main > div[class*="solution"] > button {
+  padding: 0.5% 1.5%;
+  position: absolute;
+  right: 25%;
+  bottom: -25%;
 }

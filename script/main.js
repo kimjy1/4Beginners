@@ -3,6 +3,46 @@ document.querySelector(".home").addEventListener("click", function () {
   location.reload();
 })
 
+// 상수 선언
+const aTag = document.querySelectorAll("a");
+const divTag = document.querySelectorAll("div");
+const liTag = document.querySelectorAll("li");
+const logo = document.querySelector(".home");
+const search = document.querySelector("label:nth-of-type(1)");
+const language = document.querySelector("label:nth-of-type(2)");
+const quizcontainer = document.querySelector(".grid");
+
+// 다크모드 이벤트 시작
+document.querySelector("#nightmode").addEventListener("click", function () {
+  if (this.checked == true) {
+    document.querySelector("body").style.backgroundColor = "#000";
+    document.querySelector("body").style.color = "#fff";
+    for (let i = 0; i < aTag.length; i++) {
+      aTag[i].style.color = "#fff";
+      divTag[i].style.color = "#fff";
+      liTag[i].style.color = "#fff";
+      logo.style.backgroundImage = "url(../img/night_logo.png)";
+      search.style.backgroundImage = "url(../img/nightmode_search.png)";
+      language.style.backgroundImage = "url(../img/nightmode_language.png)";
+      // quizcontainer.style.boxShadow = "0px 0px 0px  rgba(0, 0, 0 / 0%);";
+      console.log(quizcontainer);
+    }
+  } else if (this.checked == false) {
+    document.querySelector("body").style.backgroundColor = "#fff";
+    document.querySelector("body").style.color = "#000";
+    for (let i = 0; i < aTag.length; i++) {
+      aTag[i].style.color = "#000";
+      divTag[i].style.color = "#000";
+      liTag[i].style.color = "#000";
+      logo.style.backgroundImage = "url(../img/day_logo.png)";
+      search.style.backgroundImage = "url(../img/search.png)";
+      language.style.backgroundImage = "url(../img/language.png)";
+      // quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb;";
+    }
+  }
+})
+// 다크모드 이벤트 끝
+
 // 메인 - 문제 객체(생성자 함수)
 function Question(text, choice, answer) {
   this.text = text; // 질문 텍스트
@@ -113,42 +153,31 @@ for (let i = 0; i < btn.length; i++) {
 
 updateQuiz();
 
-// 상수 선언
-const aTag = document.querySelectorAll("a");
-const divTag = document.querySelectorAll("div");
-const liTag = document.querySelectorAll("li");
-const logo = document.querySelector(".home");
-const search = document.querySelector("label:nth-of-type(1)");
-const language = document.querySelector("label:nth-of-type(2)");
-const quizcontainer = document.querySelector(".grid");
+let textarea = document.getElementById("editor");
+let editor = CodeMirror.fromTextArea(textarea, {
+  firstLineNumber: 1, // 시작 줄 번호 설정
+  lineNumbers: true, // 줄번호 표시 설정
+  lineWrapping: true, // true면 줄넘김, false면 줄넘김X
+  tabSize: 2, // 들여쓰기 사이즈 설정
+  mode: "javascript", // 언어 설정
+  theme: "darcula", // 테마 설정
+  autoRefresh: true, // 초기화할 때 편집기가 표시되지 않은 경우 처음 표시될 때 새로 고쳐지도록 true로 설정할 수 있는 옵션
+  smartIndent: true,
+  matchbrackets: true,
+  autofocus: true,
+  autoCloseBrackets: true, // 괄호 자동으로 닫기 설정
+  lint: true,
+  extraKeys: { "Ctrl-Space": "autocomplete" }, // 컨트롤 스페이스를 누르면 자동완성 기능이 나옴.
+});
+editor.setSize("500", "300");
 
-// 다크모드 이벤트 시작
-document.querySelector("#nightmode").addEventListener("click", function () {
-  if (this.checked == true) {
-    document.querySelector("body").style.backgroundColor = "#000";
-    document.querySelector("body").style.color = "#fff";
-    for (let i = 0; i < aTag.length; i++) {
-      aTag[i].style.color = "#fff";
-      divTag[i].style.color = "#fff";
-      liTag[i].style.color = "#fff";
-      logo.style.backgroundImage = "url(../img/night_logo.png)";
-      search.style.backgroundImage = "url(../img/nightmode_search.png)";
-      language.style.backgroundImage = "url(../img/nightmode_language.png)";
-      // quizcontainer.style.boxShadow = "0px 0px 0px  rgba(0, 0, 0 / 0%);";
-      console.log(quizcontainer);
-    }
-  } else if (this.checked == false) {
-    document.querySelector("body").style.backgroundColor = "#fff";
-    document.querySelector("body").style.color = "#000";
-    for (let i = 0; i < aTag.length; i++) {
-      aTag[i].style.color = "#000";
-      divTag[i].style.color = "#000";
-      liTag[i].style.color = "#000";
-      logo.style.backgroundImage = "url(../img/day_logo.png)";
-      search.style.backgroundImage = "url(../img/search.png)";
-      language.style.backgroundImage = "url(../img/language.png)";
-      // quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb;";
-    }
+let answer = "display: " + "inline-block;";
+
+document.getElementById("btn1").onclick = function () {
+  let value = editor.getValue();
+  if (value == answer) {
+    alert("성공!");
+  } else {
+    alert("실패");
   }
-})
-// 다크모드 이벤트 끝
+};
