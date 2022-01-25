@@ -3,7 +3,7 @@
 /* 메인 - 퀴즈 섹션 / 첫 번째  */
 #wrap main {
   width: 100%;
-  height: 1200px;
+  height: 1400px;
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
@@ -67,33 +67,31 @@
 /* 메인 - 퀴즈 섹션 / 두 번째  */
 #wrap main > div[class*="solution"] {
   width: 80%;
-  height: 500px;
+  height: 700px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-around;
   background: #e7e7e7;
   box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 30%);
+  position: relative;
+  text-align: center;
 }
 
 #wrap main > div[class*="solution"] > h2 {
   width: 100%;
-  text-align: center;
+  height: 60px;
+  line-height: 60px;
 }
 
 #wrap main > div[class*="solution"] > div[class*="guide"] {
   width: 50%;
-  height: 450px;
+  height: 30vw;
   background: yellow;
-}
-
-#wrap main > div[class*="solution"] > #editor {
-  position: relative;
 }
 
 #wrap main > div[class*="solution"] > button {
   padding: 0.5% 1.5%;
   position: absolute;
-  right: 25%;
-  bottom: -25%;
+  bottom: 20px;
+  right: 100px;
 }

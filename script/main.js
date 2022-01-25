@@ -3,41 +3,41 @@ document.querySelector(".home").addEventListener("click", function () {
   location.reload();
 })
 
+document.querySelector("a").addEventListener("click", function (e) {
+  e.preventDefault();
+})
+
 // 상수 선언
-const aTag = document.querySelectorAll("a");
-const divTag = document.querySelectorAll("div");
-const liTag = document.querySelectorAll("li");
-const logo = document.querySelector(".home");
-const search = document.querySelector("label:nth-of-type(1)");
-const language = document.querySelector("label:nth-of-type(2)");
-const quizcontainer = document.querySelector(".grid");
+let divTag = document.querySelectorAll("div");
+let liTag = document.querySelectorAll("li");
+let logo = document.querySelector(".home");
+let search = document.querySelector("label:nth-of-type(1)");
+let language = document.querySelector("a");
+let quizcontainer = document.querySelector(".quiz-container");
 
 // 다크모드 이벤트 시작
 document.querySelector("#nightmode").addEventListener("click", function () {
   if (this.checked == true) {
     document.querySelector("body").style.backgroundColor = "#000";
     document.querySelector("body").style.color = "#fff";
-    for (let i = 0; i < aTag.length; i++) {
-      aTag[i].style.color = "#fff";
+    for (let i = 0; i < liTag.length; i++) {
       divTag[i].style.color = "#fff";
       liTag[i].style.color = "#fff";
       logo.style.backgroundImage = "url(../img/night_logo.png)";
       search.style.backgroundImage = "url(../img/nightmode_search.png)";
       language.style.backgroundImage = "url(../img/nightmode_language.png)";
-      // quizcontainer.style.boxShadow = "0px 0px 0px  rgba(0, 0, 0 / 0%);";
-      console.log(quizcontainer);
+      quizcontainer.style.boxShadow = "none";
     }
   } else if (this.checked == false) {
     document.querySelector("body").style.backgroundColor = "#fff";
     document.querySelector("body").style.color = "#000";
-    for (let i = 0; i < aTag.length; i++) {
-      aTag[i].style.color = "#000";
+    for (let i = 0; i < liTag.length; i++) {
       divTag[i].style.color = "#000";
       liTag[i].style.color = "#000";
       logo.style.backgroundImage = "url(../img/day_logo.png)";
       search.style.backgroundImage = "url(../img/search.png)";
       language.style.backgroundImage = "url(../img/language.png)";
-      // quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb;";
+      quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb";
     }
   }
 })
@@ -153,8 +153,8 @@ for (let i = 0; i < btn.length; i++) {
 
 updateQuiz();
 
-let textarea = document.getElementById("editor");
-let editor = CodeMirror.fromTextArea(textarea, {
+var textarea = document.getElementById("editor");
+var editor = CodeMirror.fromTextArea(textarea, {
   firstLineNumber: 1, // 시작 줄 번호 설정
   lineNumbers: true, // 줄번호 표시 설정
   lineWrapping: true, // true면 줄넘김, false면 줄넘김X
@@ -171,10 +171,10 @@ let editor = CodeMirror.fromTextArea(textarea, {
 });
 editor.setSize("500", "300");
 
-let answer = "display: " + "inline-block;";
+var answer = "display: " + "none;";
 
 document.getElementById("btn1").onclick = function () {
-  let value = editor.getValue();
+  var value = editor.getValue();
   if (value == answer) {
     alert("성공!");
   } else {
