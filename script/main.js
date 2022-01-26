@@ -3,11 +3,10 @@ document.querySelector(".home").addEventListener("click", function () {
   location.reload();
 })
 
-document.querySelector("a").addEventListener("click", function (e) {
-  e.preventDefault();
+document.querySelector("a").addEventListener("click", function () {
+  return false
 })
 
-// 상수 선언
 let divTag = document.querySelectorAll("div");
 let liTag = document.querySelectorAll("li");
 let logo = document.querySelector(".home");
@@ -23,9 +22,10 @@ document.querySelector("#nightmode").addEventListener("click", function () {
     for (let i = 0; i < liTag.length; i++) {
       divTag[i].style.color = "#fff";
       liTag[i].style.color = "#fff";
-      logo.style.backgroundImage = "url(../img/night_logo.png)";
-      search.style.backgroundImage = "url(../img/nightmode_search.png)";
-      language.style.backgroundImage = "url(../img/nightmode_language.png)";
+      logo.style.backgroundImage = "url(./img/night_logo.png)";
+      search.style.backgroundImage = "url(./img/night_search.png)";
+      // search.style.backgroundImage = "url(../study-coding/img/night_search.png)";
+      language.style.backgroundImage = "url(./img/night_language.png)";
       quizcontainer.style.boxShadow = "none";
     }
   } else if (this.checked == false) {
@@ -34,9 +34,9 @@ document.querySelector("#nightmode").addEventListener("click", function () {
     for (let i = 0; i < liTag.length; i++) {
       divTag[i].style.color = "#000";
       liTag[i].style.color = "#000";
-      logo.style.backgroundImage = "url(../img/day_logo.png)";
-      search.style.backgroundImage = "url(../img/search.png)";
-      language.style.backgroundImage = "url(../img/language.png)";
+      logo.style.backgroundImage = "url(./img/day_logo.png)";
+      search.style.backgroundImage = "url(./img/search.png)";
+      language.style.backgroundImage = "url(./img/language.png)";
       quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb";
     }
   }
@@ -63,16 +63,12 @@ Quiz.prototype.correctAnswer = function (answer) {
 }
 
 let questions = [
-  new Question('다음 중 최초의 상용 웹 브라우저는?', ['모자이크', '인터넷 익스플로러', '구글 크롬', '넷스케이프 네비게이터'], '넷스케이프 네비게이터'),
-  new Question('웹 문서에서 스타일을 작성하는 언어는?', ['HTML', 'jQuery', 'CSS', 'XML'], 'CSS'),
-  new Question('명령어 기반의 인터페이스를 의미하는 용어는?', ['GUI', 'CLI', 'HUD', 'SI'], 'CLI'),
-  new Question('CSS 속성 중 글자의 굵기를 변경하는 속성은?', ['font-size', 'font-style', 'font-weight', 'font-letiant'], 'font-weight'),
   new Question("보기에 주어진 수학 객체 중 정수를 변환하지 않는 객체는?", ["Math.random()", "Math.round()", "Math.ceil()", "Math.floor()"], "Math.random()"),
   new Question("다음 HTML 태그 중 종료태그가 필요없는 요소는?", ["li", "p", "tr", "input"], "input"),
   new Question("img 태그의 alt 속성에 대한 올바르지 않은 설명은?", ["이미지를 보여줄 수 없을 때 해당 이미지를 대체할 텍스트를 명시한다.", "만약 이미지가 정보를 포함하고 있다면, 텍스트는 이미지를 묘사해야 함.", "만약 이미지가 <a> 요소 내에 위치하고 있다면, 텍스트는 링크가 어디와 연결되어 있는지를 설명해야 함.", "만약 이미지가 단순한 장식이라면 alt 속성을 생략할 수 있다."], "만약 이미지가 단순한 장식이라면 alt 속성을 생략할 수 있다."),
   new Question("다음 css 적용 우선순위 중 올바른 것을 고르시오.", ["inherit-element-class-id", "element-inherit-id-class", "class-id-inherit-element", "id-class-element-inherit"], "id-class-element-inherit"),
   new Question("json 데이터 타입 중 사용할 수 없는 데이터 타입은?", ["a boolean", "undefined", "an object", "null"], "undefined"),
-  new Question("class에 대한 설명으로 틀린 것은?", ["클래스 선언은 함수 선언과 달리 Hoisting되지 않습니다.", "new를 사용하지 않고 클래스 생성자를 호출하면 오류가 발생합니다.", "클래스에서 constructor 이름을 갖는 메소드는 여러 번 만들수 있다.", "extends 키워드를 통하여 클래스를 상속 받아, 자식 클래스를 만들 수 있습니다."], "클래스에서 constructor 이름을 갖는 메소드는 여러 번 만들수 있다."),
+  new Question("class에 대한 설명으로 틀린 것은?", ["클래스 선언은 함수 선언과 달리 Hoisting되지 않습니다.", "new를 사용하지 않고 클래스 생성자를 호출하면 오류가 발생합니다.", "클래스에서 letructor 이름을 갖는 메소드는 여러 번 만들수 있다.", "extends 키워드를 통하여 클래스를 상속 받아, 자식 클래스를 만들 수 있습니다."], "클래스에서 letructor 이름을 갖는 메소드는 여러 번 만들수 있다."),
   new Question("ajax에 대하여 설명으로 틀린 것은?", ["Ajax는 클라이언트가 서버에 데이터를 요청하는 클라이언트 풀링 방식을 사용하므로, 서버 푸시 방식의 실시간 서비스는 만들 수 없습니다.", "웹 페이지가 로드된 후에 서버로 데이터 요청을 보낼 수 있습니다.", "클라이언트의 PC로 Ajax 요청을 보낼 수 있습니다.", "Ajax 스크립트가 포함된 서버가 아닌 다른 서버로 Ajax 요청을 보낼 수는 없습니다."], "클라이언트의 PC로 Ajax 요청을 보낼 수 있습니다."),
   new Question("Git 명령어와 내용 설명 중 옳은 것은?", ["git status - 파일 상태 확인", "git add - 원격 서버로 전송", "git init - 각 파일을 병합", "git branch - 원격 서버 저장소 복제"], "git status - 파일 상태 확인"),
   new Question("CSS 속성 중 축약할 수 없는 속성은?", ["animation", "background", "font", "text"], "text"),
@@ -153,31 +149,57 @@ for (let i = 0; i < btn.length; i++) {
 
 updateQuiz();
 
-var textarea = document.getElementById("editor");
-var editor = CodeMirror.fromTextArea(textarea, {
+const textarea = document.getElementById("editor");
+const editor = CodeMirror.fromTextArea(textarea, {
   firstLineNumber: 1, // 시작 줄 번호 설정
   lineNumbers: true, // 줄번호 표시 설정
-  lineWrapping: true, // true면 줄넘김, false면 줄넘김X
+  lineWrapping: true, // true면 줄넘김O, false면 줄넘김X
   tabSize: 2, // 들여쓰기 사이즈 설정
   mode: "javascript", // 언어 설정
   theme: "darcula", // 테마 설정
   autoRefresh: true, // 초기화할 때 편집기가 표시되지 않은 경우 처음 표시될 때 새로 고쳐지도록 true로 설정할 수 있는 옵션
   smartIndent: true,
   matchbrackets: true,
-  autofocus: true,
+  autofocus: false, // 포커스 설정
   autoCloseBrackets: true, // 괄호 자동으로 닫기 설정
   lint: true,
   extraKeys: { "Ctrl-Space": "autocomplete" }, // 컨트롤 스페이스를 누르면 자동완성 기능이 나옴.
 });
 editor.setSize("500", "300");
 
-var answer = "display: " + "none;";
+let testarray = ["orange", "red", "tomato", "green", "purple"];
+let ChangeImg = Math.ceil(Math.random() * testarray.length);
+var answer = "display: " + "inline-block;";
 
-document.getElementById("btn1").onclick = function () {
-  var value = editor.getValue();
-  if (value == answer) {
-    alert("성공!");
+// document.getElementById("btn1").onclick = function () {
+//   var confirm = editor.getValue();
+//   if (confirm == answer) {
+//     for (let i = 0; i < testarray.length; i++) {
+//       document.querySelector(".guide").style.backgroundColor = testarray[ChangeImg];
+//     }
+//   } else {
+//     alert("실패");
+//   }
+// };
+
+document.querySelector("#btn1").addEventListener("click", function () {
+  var confirm = editor.getValue();
+  if (confirm == answer) {
+    for (let i = 0; i < testarray.length; i++) {
+      document.querySelector(".guide").style.backgroundColor = testarray[ChangeImg];
+    }
   } else {
     alert("실패");
+    document.querySelector(".guide").style.backgroundColor = "black";
   }
-};
+});
+
+// function changeQuiz() {
+//   for (let i = 0; i < testarray.length; i++) {
+//     document.querySelector(".guide").style.backgroundColor = testarray[ChangeImg];
+//   }
+// }
+
+// if (location.reload) {
+//   document.querySelector(".guide").style.backgroundColor = testarray[ChangeImg];
+// }
