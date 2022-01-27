@@ -24,7 +24,6 @@ document.querySelector("#nightmode").addEventListener("click", function () {
       liTag[i].style.color = "#fff";
       logo.style.backgroundImage = "url(./img/night_logo.png)";
       search.style.backgroundImage = "url(./img/night_search.png)";
-      // search.style.backgroundImage = "url(../study-coding/img/night_search.png)";
       language.style.backgroundImage = "url(./img/night_language.png)";
       quizcontainer.style.boxShadow = "none";
     }
@@ -68,7 +67,7 @@ let questions = [
   new Question("img 태그의 alt 속성에 대한 올바르지 않은 설명은?", ["이미지를 보여줄 수 없을 때 해당 이미지를 대체할 텍스트를 명시한다.", "만약 이미지가 정보를 포함하고 있다면, 텍스트는 이미지를 묘사해야 함.", "만약 이미지가 <a> 요소 내에 위치하고 있다면, 텍스트는 링크가 어디와 연결되어 있는지를 설명해야 함.", "만약 이미지가 단순한 장식이라면 alt 속성을 생략할 수 있다."], "만약 이미지가 단순한 장식이라면 alt 속성을 생략할 수 있다."),
   new Question("다음 css 적용 우선순위 중 올바른 것을 고르시오.", ["inherit-element-class-id", "element-inherit-id-class", "class-id-inherit-element", "id-class-element-inherit"], "id-class-element-inherit"),
   new Question("json 데이터 타입 중 사용할 수 없는 데이터 타입은?", ["a boolean", "undefined", "an object", "null"], "undefined"),
-  new Question("class에 대한 설명으로 틀린 것은?", ["클래스 선언은 함수 선언과 달리 Hoisting되지 않습니다.", "new를 사용하지 않고 클래스 생성자를 호출하면 오류가 발생합니다.", "클래스에서 letructor 이름을 갖는 메소드는 여러 번 만들수 있다.", "extends 키워드를 통하여 클래스를 상속 받아, 자식 클래스를 만들 수 있습니다."], "클래스에서 letructor 이름을 갖는 메소드는 여러 번 만들수 있다."),
+  new Question("class에 대한 설명으로 틀린 것은?", ["클래스 선언은 함수 선언과 달리 Hoisting되지 않습니다.", "new를 사용하지 않고 클래스 생성자를 호출하면 오류가 발생합니다.", "클래스에서 letructor 이름을 갖는 메소드는 여러 번 만들 수 있다.", "extends 키워드를 통하여 클래스를 상속 받아, 자식 클래스를 만들 수 있습니다."], "클래스에서 letructor 이름을 갖는 메소드는 여러 번 만들 수 있다."),
   new Question("ajax에 대하여 설명으로 틀린 것은?", ["Ajax는 클라이언트가 서버에 데이터를 요청하는 클라이언트 풀링 방식을 사용하므로, 서버 푸시 방식의 실시간 서비스는 만들 수 없습니다.", "웹 페이지가 로드된 후에 서버로 데이터 요청을 보낼 수 있습니다.", "클라이언트의 PC로 Ajax 요청을 보낼 수 있습니다.", "Ajax 스크립트가 포함된 서버가 아닌 다른 서버로 Ajax 요청을 보낼 수는 없습니다."], "클라이언트의 PC로 Ajax 요청을 보낼 수 있습니다."),
   new Question("Git 명령어와 내용 설명 중 옳은 것은?", ["git status - 파일 상태 확인", "git add - 원격 서버로 전송", "git init - 각 파일을 병합", "git branch - 원격 서버 저장소 복제"], "git status - 파일 상태 확인"),
   new Question("CSS 속성 중 축약할 수 없는 속성은?", ["animation", "background", "font", "text"], "text"),
@@ -167,39 +166,31 @@ const editor = CodeMirror.fromTextArea(textarea, {
 });
 editor.setSize("500", "300");
 
-let testarray = ["orange", "red", "tomato", "green", "purple"];
-let ChangeImg = Math.ceil(Math.random() * testarray.length);
-var answer = "display: " + "inline-block;";
+// 랜덤 문제 객체(생성자 함수)
+function RandomQuiz(quizTitle, randomImage, thisAnswer) {
+  this.quizTitle = quizTitle;
+  this.randomImage = randomImage;
+  this.thisAnswer = thisAnswer;
+}
 
-// document.getElementById("btn1").onclick = function () {
-//   var confirm = editor.getValue();
-//   if (confirm == answer) {
-//     for (let i = 0; i < testarray.length; i++) {
-//       document.querySelector(".guide").style.backgroundColor = testarray[ChangeImg];
-//     }
-//   } else {
-//     alert("실패");
-//   }
-// };
+let cssQuiz = [
+  new RandomQuiz("보기에 주어진 h1의 속성을 빨간색으로 변경하시오.", "", ["color: rgb(255, 0, 0);", "color: red;", "color: #ff0000;", "color: hsl(0, 100%, 50%);"]),
+]
 
-document.querySelector("#btn1").addEventListener("click", function () {
-  var confirm = editor.getValue();
-  if (confirm == answer) {
-    for (let i = 0; i < testarray.length; i++) {
-      document.querySelector(".guide").style.backgroundColor = testarray[ChangeImg];
-    }
+console.log(cssQuiz);
+
+
+
+document.querySelector("#btn1").onclick = () => {
+  let testarray = ["orange", "red", "tomato", "green", "purple"];
+  let ChangeImg = Math.floor(Math.random() * testarray.length);
+  let quizguide = document.querySelector(".guide");
+  let testAnswer = "display: " + "inline-block;";
+  let confirm = editor.getValue();
+  if (confirm == testAnswer) {
+    quizguide.style.backgroundColor = testarray[ChangeImg];
   } else {
-    alert("실패");
-    document.querySelector(".guide").style.backgroundColor = "black";
+    console.log(quizguide.style.backgroundColor);
   }
-});
-
-// function changeQuiz() {
-//   for (let i = 0; i < testarray.length; i++) {
-//     document.querySelector(".guide").style.backgroundColor = testarray[ChangeImg];
-//   }
-// }
-
-// if (location.reload) {
-//   document.querySelector(".guide").style.backgroundColor = testarray[ChangeImg];
-// }
+  console.log(confirm, quizguide.style.backgroundColor);
+}
