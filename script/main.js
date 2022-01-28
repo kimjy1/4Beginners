@@ -177,20 +177,18 @@ let cssQuiz = [
   new RandomQuiz("보기에 주어진 h1의 속성을 빨간색으로 변경하시오.", "", ["color: rgb(255, 0, 0);", "color: red;", "color: #ff0000;", "color: hsl(0, 100%, 50%);"]),
 ]
 
-console.log(cssQuiz);
-
-
-
 document.querySelector("#btn1").onclick = () => {
   let testarray = ["orange", "red", "tomato", "green", "purple"];
   let ChangeImg = Math.floor(Math.random() * testarray.length);
   let quizguide = document.querySelector(".guide");
   let testAnswer = "display: " + "inline-block;";
   let confirm = editor.getValue();
-  if (confirm == testAnswer) {
-    quizguide.style.backgroundColor = testarray[ChangeImg];
-  } else {
-    console.log(quizguide.style.backgroundColor);
-  }
-  console.log(confirm, quizguide.style.backgroundColor);
+  cssQuiz.forEach(realAnswer => console.log(realAnswer.thisAnswer));
+  // if (confirm == testAnswer) {
+  //   quizguide.style.backgroundColor = testarray[ChangeImg];
+  // } else {
+  //   console.log(quizguide.style.backgroundColor);
+  // }
 }
+
+// 배열에 한 번씩 접근하여 (OR) 일치하는 것이 있으면 실행
