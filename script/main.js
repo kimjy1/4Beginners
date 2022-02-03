@@ -188,22 +188,10 @@ document.querySelector("#btn1").onclick = () => {
   let quizguide = document.querySelector(".guide");
   let confirm = editor.getValue();
   let i = 0;
-  // for (let i = 0; i < testarray.length; i++) {
-  //   if (confirm == cssQuiz[i].thisAnswer[i]) {
-  //     console.log("성공!", cssQuiz[i].thisAnswer[i]);
-  //     quizguide.style.backgroundColor = testarray[ChangeImg];
-  //     break;
-  //   } else {
-  //     console.log("실패", cssQuiz[0].thisAnswer[i]);
-  //     break;
-  //   }
-  // }
-
-  for (let value of cssQuiz[0].thisAnswer) {
-    if (confirm == value) {
+  for (let cssAnswer of cssQuiz[i].thisAnswer) {
+    if (confirm == cssAnswer) {
       quizguide.style.backgroundColor = testarray[ChangeImg];
-    } else {
-      console.log("실패");
+      console.log(cssQuiz);
     }
   }
 
