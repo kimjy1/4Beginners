@@ -1,15 +1,15 @@
 // 헤더 - 로고 누르면 홈페이지 리로드
-document.querySelector(".home").addEventListener("click", function () {
+document.querySelector(".logo").addEventListener("click", function () {
   location.reload();
 })
 
 document.querySelector("a").addEventListener("click", function () {
-  return false
+  return false;
 })
 
 let divTag = document.querySelectorAll("div");
 let liTag = document.querySelectorAll("li");
-let logo = document.querySelector(".home");
+let logo = document.querySelector(".logo");
 let search = document.querySelector("label:nth-of-type(1)");
 let language = document.querySelector("a");
 let quizcontainer = document.querySelector(".quiz-container");
@@ -18,10 +18,10 @@ let quizcontainer = document.querySelector(".quiz-container");
 document.querySelector("#nightmode").addEventListener("click", function () {
   if (this.checked == true) {
     document.querySelector("body").style.backgroundColor = "#000";
-    document.querySelector("body").style.color = "#fff";
+    document.querySelector("body").style.color = "#bdc1c6";
     for (let i = 0; i < liTag.length; i++) {
-      divTag[i].style.color = "#fff";
-      liTag[i].style.color = "#fff";
+      divTag[i].style.color = "#bdc1c6";
+      liTag[i].style.color = "#bdc1c6";
       logo.style.backgroundImage = "url(./img/night_logo.png)";
       search.style.backgroundImage = "url(./img/night_search.png)";
       language.style.backgroundImage = "url(./img/night_language.png)";

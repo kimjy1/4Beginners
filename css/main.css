@@ -95,3 +95,9 @@
   bottom: 20px;
   right: 100px;
 }
+
+@media all and (min-width: 1024px) {
+  #wrap main > .solution-container > .guide {
+    width: 768px;
+  }
+}
