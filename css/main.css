@@ -19,9 +19,9 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
-  border: 2px solid #82a584;
+  /* border: 2px solid #82a584; */
   border-radius: 20px;
-  box-shadow: 5px 5px 5px #cbcbcb;
+  box-shadow: 2px 4px 20px rgb(80 102 102 / 20%);
 }
 
 .quiz-container > h1 {
@@ -72,7 +72,8 @@
   flex-flow: row wrap;
   justify-content: space-around;
   background: #e7e7e7;
-  box-shadow: 1px 1px 15px 2px rgb(0 0 0 / 30%);
+  box-shadow: 2px 4px 20px rgb(80 102 102 / 20%);
+  border-radius: 20px;
   position: relative;
 }
 

@@ -1,18 +1,15 @@
 // 헤더 - 로고 누르면 홈페이지 리로드
-document.querySelector(".logo").addEventListener("click", function () {
-  location.reload();
-})
+document.querySelector(".logo").addEventListener("click", () => location.reload());
 
 document.querySelector("a").addEventListener("click", function () {
   return false;
-})
+});
 
-let divTag = document.querySelectorAll("div");
-let liTag = document.querySelectorAll("li");
-let logo = document.querySelector(".logo");
-let search = document.querySelector("label:nth-of-type(1)");
-let language = document.querySelector("a");
-let quizcontainer = document.querySelector(".quiz-container");
+const liTag = document.querySelectorAll("li");
+const logo = document.querySelector(".logo");
+const search = document.querySelector("label:nth-of-type(1)");
+const language = document.querySelector("a");
+const quizcontainer = document.querySelector(".quiz-container");
 
 // 다크모드 이벤트 시작
 document.querySelector("#nightmode").addEventListener("click", function () {
@@ -20,8 +17,7 @@ document.querySelector("#nightmode").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#000";
     document.querySelector("body").style.color = "#bdc1c6";
     for (let i = 0; i < liTag.length; i++) {
-      divTag[i].style.color = "#bdc1c6";
-      liTag[i].style.color = "#bdc1c6";
+      liTag[i].classList.add("colorChange");
       logo.style.backgroundImage = "url(./img/night_logo.png)";
       search.style.backgroundImage = "url(./img/night_search.png)";
       language.style.backgroundImage = "url(./img/night_language.png)";
@@ -31,8 +27,7 @@ document.querySelector("#nightmode").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#fff";
     document.querySelector("body").style.color = "#000";
     for (let i = 0; i < liTag.length; i++) {
-      divTag[i].style.color = "#000";
-      liTag[i].style.color = "#000";
+      liTag[i].classList.remove("colorChange");
       logo.style.backgroundImage = "url(./img/day_logo.png)";
       search.style.backgroundImage = "url(./img/search.png)";
       language.style.backgroundImage = "url(./img/language.png)";
@@ -194,13 +189,6 @@ document.querySelector("#btn1").onclick = () => {
       console.log(cssQuiz);
     }
   }
-
-
-  // if (confirm == testAnswer) {
-  //   quizguide.style.backgroundColor = testarray[ChangeImg];
-  // } else {
-  //   console.log(quizguide.style.backgroundColor);
-  // }
 }
 
 // 배열에 한 번씩 접근하여 (OR) 일치하는 것이 있으면 실행
