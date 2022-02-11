@@ -71,7 +71,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  background: #e7e7e7;
+  /* background: #e7e7e7; */
   box-shadow: 2px 4px 20px rgb(80 102 102 / 20%);
   border-radius: 20px;
   position: relative;

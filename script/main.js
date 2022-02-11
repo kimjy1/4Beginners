@@ -1,6 +1,7 @@
 // 헤더 - 로고 누르면 홈페이지 리로드
 document.querySelector(".logo").addEventListener("click", () => location.reload());
 
+// 헤더 - 앵커 눌러도 페이지 최상단으로 이동하지 않음
 document.querySelector("a").addEventListener("click", function () {
   return false;
 });
@@ -37,6 +38,7 @@ document.querySelector("#nightmode").addEventListener("click", function () {
 })
 // 다크모드 이벤트 끝
 
+// 소스코드 편집기(라이브러리) 시작
 const textarea = document.getElementById("editor");
 const editor = CodeMirror.fromTextArea(textarea, {
   firstLineNumber: 1, // 시작 줄 번호 설정
@@ -54,6 +56,7 @@ const editor = CodeMirror.fromTextArea(textarea, {
   extraKeys: { "Ctrl-Space": "autocomplete" }, // 컨트롤 스페이스를 누르면 자동완성 기능이 나옴.
 });
 editor.setSize("500", "300");
+// 소스코드 편집기(라이브러리) 끝
 
 // 랜덤 문제 객체(생성자 함수)
 function RandomQuiz(quizTitle, randomImage, thisAnswer) {
@@ -67,53 +70,28 @@ RandomQuiz.prototype.confirmAnswer = function (answer1) {
 }
 
 let cssQuiz = [
-  new RandomQuiz("보기에 주어진 h1의 스타일을 빨간색으로 변경하시오.", "asdf1", ["color: rgb(255, 0, 0);", "color: red;", "color: #ff0000;", "color: hsl(0, 100%, 50%);"]),
-  new RandomQuiz("테스트2.", "asdf2", ["display: none;", "visibility: hidden;", "opacity: 0;"]),
+  new RandomQuiz("보기에 주어진 h1의 스타일을 빨간색으로 변경하시오.", "imgsrc1", ["color: rgb(255, 0, 0);", "color: red;", "color: #ff0000;", "color: hsl(0, 100%, 50%);"]),
+  new RandomQuiz("문제예시2", "imgsrc2", ["display: none;", "visibility: hidden;", "opacity: 0;"]),
 ]
 
 const question = document.querySelector(".random-title");
 const testarray = ["orange", "red", "tomato", "green", "purple"];
 const quizguide = document.querySelector(".guide");
 let ChangeImg = Math.floor(Math.random() * testarray.length);
-let i = -1;
+let i = 0;
+let answerIndex = 0;
 
-// document.querySelector("#btn1").onclick = () => {
-//   let confirm = editor.getValue();
-//   for (let cssAnswer of cssQuiz[i].thisAnswer) {
-//     if (confirm == cssAnswer) {
-//       quizguide.style.backgroundColor = testarray[ChangeImg];
-//       console.log(cssAnswer);
-//     } else if (confirm == cssQuiz[i].thisAnswer) {
-//       console.log("대성공!");
-//     } else {
-//       console.log("역시나 실패..", cssQuiz[i].thisAnswer[i]);
-//     }
-//   }
-// }
-
-document.querySelector("#btn1").onclick = () => {
-  let confirm = editor.getValue();
-  for (let cssAnswer of cssQuiz[i].thisAnswer) {
-    while (i < 2) {
-      i++;
-      if (confirm == cssAnswer) {
-        quizguide.style.backgroundColor = testarray[ChangeImg];
-        console.log(cssAnswer);
-      } else {
-        console.log("역시나 실패..", cssQuiz[i].thisAnswer[i]);
-      }
-    }
-  }
-}
-
-document.querySelector("#btn1").onclick = () => {
+document.querySelector("#btn1").addEventListener("click", () => {
   let confirm = editor.getValue();
   for (let cssAnswer of cssQuiz[i].thisAnswer) {
     if (confirm == cssAnswer) {
       quizguide.style.backgroundColor = testarray[ChangeImg];
+      console.log(cssAnswer);
+    } else {
+      console.log("역시나 실패..", cssQuiz[i].thisAnswer[i]);
     }
   }
-}
+});
 
 window.onload = () => {
   question.innerHTML = cssQuiz[i].quizTitle;
@@ -121,3 +99,27 @@ window.onload = () => {
 }
 
 // 배열에 한 번씩 접근하여 (OR) 일치하는 것이 있으면 실행
+
+// document.querySelector("#btn1").onclick = () => {
+//   let confirm = editor.getValue();
+//   for (let cssAnswer of cssQuiz[i].thisAnswer) {
+//     while (i < 2) {
+//       i++;
+//       if (confirm == cssAnswer) {
+//         quizguide.style.backgroundColor = testarray[ChangeImg];
+//         console.log(cssAnswer);
+//       } else {
+//         console.log("역시나 실패..", cssQuiz[i].thisAnswer[i]);
+//       }
+//     }
+//   }
+// }
+
+// document.querySelector("#btn1").onclick = () => {
+//   let confirm = editor.getValue();
+//   for (let cssAnswer of cssQuiz[i].thisAnswer) {
+//     if (confirm == cssAnswer) {
+//       quizguide.style.backgroundColor = testarray[ChangeImg];
+//     }
+//   }
+// }
