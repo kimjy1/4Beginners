@@ -1,41 +1,45 @@
 // 헤더 - 로고 누르면 홈페이지 리로드
 document.querySelector(".logo").addEventListener("click", () => location.reload());
 
-// 헤더 - 앵커 눌러도 페이지 최상단으로 이동하지 않음
-document.querySelector("a").addEventListener("click", function () {
-  return false;
-});
-
-const liTag = document.querySelectorAll("li");
-const logo = document.querySelector(".logo");
-const search = document.querySelector("label:nth-of-type(1)");
-const language = document.querySelector("a");
-const quizcontainer = document.querySelector(".quiz-container");
+let logo = document.querySelector(".logo");
+let liTag = document.querySelectorAll("li");
+let search = document.querySelector(".option button:nth-of-type(1)");
+let language = document.querySelector(".option button:nth-of-type(2)");
+let quizcontainer = document.querySelector(".solution-container");
 
 // 다크모드 이벤트 시작
-document.querySelector("#nightmode").addEventListener("click", function () {
+document.querySelector("#nightmode").addEventListener("click", () => {
   if (this.checked == true) {
     document.querySelector("body").style.backgroundColor = "#000";
     document.querySelector("body").style.color = "#bdc1c6";
-    for (let i = 0; i < liTag.length; i++) {
-      liTag[i].classList.add("colorChange");
-      logo.style.backgroundImage = "url(./img/night_logo.png)";
-      search.style.backgroundImage = "url(./img/night_search.png)";
-      language.style.backgroundImage = "url(./img/night_language.png)";
-      quizcontainer.style.boxShadow = "none";
-    }
   } else if (this.checked == false) {
-    document.querySelector("body").style.backgroundColor = "#fff";
-    document.querySelector("body").style.color = "#000";
-    for (let i = 0; i < liTag.length; i++) {
-      liTag[i].classList.remove("colorChange");
-      logo.style.backgroundImage = "url(./img/day_logo.png)";
-      search.style.backgroundImage = "url(./img/search.png)";
-      language.style.backgroundImage = "url(./img/language.png)";
-      quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb";
-    }
+    alert("실패!");
   }
-})
+});
+
+// document.querySelector("#nightmode").addEventListener("click", () => {
+//   if (this.checked == true) {
+//     document.querySelector("body").style.backgroundColor = "#000";
+//     document.querySelector("body").style.color = "#bdc1c6";
+//     for (let i = 0; i < liTag.length; i++) {
+//       liTag[i].classList.add("colorChange");
+//       logo.style.backgroundImage = "url(./img/night_logo.png)";
+//       search.style.backgroundImage = "url(./img/night_search.png)";
+//       language.style.backgroundImage = "url(./img/night_language.png)";
+//       quizcontainer.style.boxShadow = "none";
+//     }
+//   } else if (this.checked == false) {
+//     document.querySelector("body").style.backgroundColor = "#fff";
+//     document.querySelector("body").style.color = "#000";
+//     for (let i = 0; i < liTag.length; i++) {
+//       liTag[i].classList.remove("colorChange");
+//       logo.style.backgroundImage = "url(./img/day_logo.png)";
+//       search.style.backgroundImage = "url(./img/search.png)";
+//       language.style.backgroundImage = "url(./img/language.png)";
+//       quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb";
+//     }
+//   }
+// })
 // 다크모드 이벤트 끝
 
 // 소스코드 편집기(라이브러리) 시작

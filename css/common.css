@@ -1,5 +1,28 @@
 @charset "utf-8";
 
+/* 반복되는 속성 시작 */
+header,
+footer {
+  height: 100px;
+}
+
+:where(header) .menu,
+.option {
+  height: 40px;
+}
+
+.logo,
+.menu ul li,
+.option label:hover {
+  cursor: pointer;
+}
+
+:where(#wrap, header) button {
+  all: unset;
+  cursor: pointer;
+}
+/* 반복되는 속성 끝 */
+
 #wrap {
   width: 100vw;
   height: 100vh;
@@ -8,7 +31,6 @@
 /* 헤더 기본 설정 시작 */
 header {
   width: 100%;
-  height: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -19,12 +41,12 @@ header > .logo {
   width: 160px;
   height: 64px;
   background: url(../img/day_logo.png) no-repeat left center / 160px 64px;
-  cursor: pointer;
 }
 
-/* 헤더 네비게이션 시작*/
+/* 헤더 네비게이션 컨테이너 시작*/
 header > .menu {
-  width: 39%;
+  width: 40vw;
+  line-height: 40px;
 }
 
 .menu > ul {
@@ -35,14 +57,13 @@ header > .menu {
 
 .menu > ul li {
   font-weight: bold;
-  cursor: pointer;
 }
 
 .menu > ul li:hover {
   color: #82a584;
 }
 
-/* addclass 시작 */
+/* 자바스크립트 addclass 시작 */
 .menu > ul > .colorChange {
   color: #bdc1c6;
 }
@@ -50,69 +71,56 @@ header > .menu {
 .menu > ul > .colorChange:hover {
   color: #82a584;
 }
-/* addclass 끝 */
+/* 자바스크립트 addclass 끝 */
 
 header .option {
-  width: 17%;
-}
-
-header .option > div {
-  width: 100%;
-  height: 100px;
+  width: 10vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
-header .option div > input[type="checkbox"] {
-  display: none;
-}
-
-header .option div > input[type="checkbox"] + label {
-  width: 24px;
-  height: 24px;
+.option button {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
+  background: no-repeat center center / 28px 28px;
   box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
-  background: no-repeat center center / 24px 24px;
-  transition: box-shadow 0.5s;
-  cursor: pointer;
 }
 
-header .option div > input[type="checkbox"] + label:hover {
-  box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 20%);
-}
-
-header .option div > input[type="checkbox"] + label:nth-of-type(1) {
+.option button:nth-of-type(1) {
   background-image: url(../img/search.png);
 }
 
-header > .option > div > a {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
-  background: url(../img/language.png) no-repeat center center / 24px 24px;
-  transition: box-shadow 0.5s;
-  cursor: pointer;
+.option button:nth-of-type(2) {
+  background-image: url(../img/language.png);
 }
 
-header > .option > div > a:hover {
+.option input[type="checkbox"] {
+  display: none;
+}
+
+.option input[type="checkbox"] + label {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
+  background: url(../img/daymode.png) no-repeat center center / 28px 28px;
+  transition: box-shadow 0.5s;
+}
+
+.option input[type="checkbox"] + label:hover {
   box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 20%);
 }
 
-header .option div > input[type="checkbox"] + label:nth-of-type(2) {
-  background-image: url(../img/daymode.png);
-}
-
-header .option div > input[id*="nightmode"]:checked ~ label:nth-of-type(2) {
+/* .option input[id*="nightmode"]:checked + label {
   background-image: url(../img/nightmode.png);
-}
+} */
 /* 공통 - 헤더 기본 설정 끝 */
 
 /* 공통 - 푸터 기본 설정 */
 footer {
   width: 100%;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
