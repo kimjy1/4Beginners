@@ -72,7 +72,7 @@
 
   <body>
     <div id="wrap">
-      <header>
+      <header class="page-header">
         <div class="logo"></div>
         <nav class="menu">
           <ul>
@@ -85,8 +85,7 @@
         <div class="option">
           <button type="button"></button>
           <button type="button"></button>
-          <input type="checkbox" id="nightmode" />
-          <label for="nightmode"></label>
+          <button type="button" class="nightmode"></button>
         </div>
       </header>
       <main>
@@ -97,10 +96,12 @@
           <div class="guide"></div>
 
           <textarea name="" id="editor"></textarea>
-          <button type="button" id="btn1">제출</button>
+          <button type="button" id="submit-btn">제출</button>
         </div>
       </main>
-      <footer>© 2022 4Beginners. All Rights Reserved.</footer>
+      <footer class="page-footer">
+        © 2022 4Beginners. All Rights Reserved.
+      </footer>
     </div>
 
     <script src="script/main.js" defer></script>

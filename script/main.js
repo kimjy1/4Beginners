@@ -8,38 +8,9 @@ let language = document.querySelector(".option button:nth-of-type(2)");
 let quizcontainer = document.querySelector(".solution-container");
 
 // 다크모드 이벤트 시작
-document.querySelector("#nightmode").addEventListener("click", () => {
-  if (this.checked == true) {
-    document.querySelector("body").style.backgroundColor = "#000";
-    document.querySelector("body").style.color = "#bdc1c6";
-  } else if (this.checked == false) {
-    alert("실패!");
-  }
-});
-
-// document.querySelector("#nightmode").addEventListener("click", () => {
-//   if (this.checked == true) {
-//     document.querySelector("body").style.backgroundColor = "#000";
-//     document.querySelector("body").style.color = "#bdc1c6";
-//     for (let i = 0; i < liTag.length; i++) {
-//       liTag[i].classList.add("colorChange");
-//       logo.style.backgroundImage = "url(./img/night_logo.png)";
-//       search.style.backgroundImage = "url(./img/night_search.png)";
-//       language.style.backgroundImage = "url(./img/night_language.png)";
-//       quizcontainer.style.boxShadow = "none";
-//     }
-//   } else if (this.checked == false) {
-//     document.querySelector("body").style.backgroundColor = "#fff";
-//     document.querySelector("body").style.color = "#000";
-//     for (let i = 0; i < liTag.length; i++) {
-//       liTag[i].classList.remove("colorChange");
-//       logo.style.backgroundImage = "url(./img/day_logo.png)";
-//       search.style.backgroundImage = "url(./img/search.png)";
-//       language.style.backgroundImage = "url(./img/language.png)";
-//       quizcontainer.style.boxShadow = "5px 5px 5px #cbcbcb";
-//     }
-//   }
-// })
+document.querySelector(".nightmode").addEventListener("click", () => {
+  document.documentElement.classList.toggle("dark");
+})
 // 다크모드 이벤트 끝
 
 // 소스코드 편집기(라이브러리) 시작
@@ -85,7 +56,7 @@ let ChangeImg = Math.floor(Math.random() * testarray.length);
 let i = 0;
 let answerIndex = 0;
 
-document.querySelector("#btn1").addEventListener("click", () => {
+document.querySelector("#submit-btn").addEventListener("click", () => {
   let confirm = editor.getValue();
   for (let cssAnswer of cssQuiz[i].thisAnswer) {
     if (confirm == cssAnswer) {

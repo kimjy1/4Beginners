@@ -1,23 +1,30 @@
 @charset "utf-8";
 
-/* 반복되는 속성 시작 */
-header,
-footer {
+html {
+  color: #343434;
+}
+
+html.dark {
+  background: #121212;
+  color: #bbb;
+}
+
+/* 중복 속성 시작 */
+.page-header,
+.page-footer {
   height: 100px;
 }
 
-:where(header) .menu,
+.menu,
 .option {
   height: 40px;
 }
 
-.logo,
-.menu ul li,
-.option label:hover {
+:is(.logo, .menu ul li, .option label):hover {
   cursor: pointer;
 }
 
-:where(#wrap, header) button {
+:where(.option, .solution-container) button {
   all: unset;
   cursor: pointer;
 }
@@ -25,11 +32,11 @@ footer {
 
 #wrap {
   width: 100vw;
-  height: 100vh;
+  height: auto;
 }
 
 /* 헤더 기본 설정 시작 */
-header {
+.page-header {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -37,14 +44,14 @@ header {
 }
 
 /* 헤더 로고 */
-header > .logo {
+.page-header > .logo {
   width: 160px;
   height: 64px;
   background: url(../img/day_logo.png) no-repeat left center / 160px 64px;
 }
 
 /* 헤더 네비게이션 컨테이너 시작*/
-header > .menu {
+.page-header > .menu {
   width: 40vw;
   line-height: 40px;
 }
@@ -73,7 +80,7 @@ header > .menu {
 }
 /* 자바스크립트 addclass 끝 */
 
-header .option {
+.page-header .option {
   width: 10vw;
   display: flex;
   justify-content: space-around;
@@ -81,11 +88,12 @@ header .option {
 }
 
 .option button {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: no-repeat center center / 28px 28px;
+  background: no-repeat center center / 24px 24px;
   box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
+  transition: box-shadow 0.5s;
 }
 
 .option button:nth-of-type(1) {
@@ -96,30 +104,17 @@ header .option {
   background-image: url(../img/language.png);
 }
 
-.option input[type="checkbox"] {
-  display: none;
+.option button:nth-of-type(3) {
+  background-image: url(../img/daymode.png);
 }
 
-.option input[type="checkbox"] + label {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
-  background: url(../img/daymode.png) no-repeat center center / 28px 28px;
-  transition: box-shadow 0.5s;
-}
-
-.option input[type="checkbox"] + label:hover {
+.option button:hover {
   box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 20%);
 }
-
-/* .option input[id*="nightmode"]:checked + label {
-  background-image: url(../img/nightmode.png);
-} */
 /* 공통 - 헤더 기본 설정 끝 */
 
 /* 공통 - 푸터 기본 설정 */
-footer {
+.page-footer {
   width: 100%;
   display: flex;
   justify-content: center;
