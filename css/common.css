@@ -1,11 +1,12 @@
 @charset "utf-8";
 
 html {
-  color: #343434;
+  color: #000;
 }
 
 html.dark {
-  background: #121212;
+  /* background: #384955; */
+  background: #2b3e50;
   color: #bbb;
 }
 
@@ -20,7 +21,7 @@ html.dark {
   height: 40px;
 }
 
-:is(.logo, .menu ul li, .option label):hover {
+:where(.logo, .menu ul li, .option label):hover {
   cursor: pointer;
 }
 
@@ -62,23 +63,9 @@ html.dark {
   justify-content: space-evenly;
 }
 
-.menu > ul li {
-  font-weight: bold;
-}
-
 .menu > ul li:hover {
   color: #82a584;
 }
-
-/* 자바스크립트 addclass 시작 */
-.menu > ul > .colorChange {
-  color: #bdc1c6;
-}
-
-.menu > ul > .colorChange:hover {
-  color: #82a584;
-}
-/* 자바스크립트 addclass 끝 */
 
 .page-header .option {
   width: 10vw;

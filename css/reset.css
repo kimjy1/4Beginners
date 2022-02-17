@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 *,
-::before,
-::after {
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,9 +24,16 @@ a:active {
   color: #000;
 }
 
+@font-face {
+  font-family: "MinSans-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  font-family: "Nanum Gothic", sans-serif;
+  overflow: hidden scroll;
+  font-family: "MinSans-Medium", sans-serif;
   font-size: 0.9em;
 }
