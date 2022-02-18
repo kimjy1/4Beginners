@@ -1,13 +1,16 @@
 @charset "utf-8";
-
-html {
-  color: #000;
+:root[color-theme="dark"] {
+  --background: #2b3e50;
+  --color: #bbb;
+}
+:root[color-theme="light"] {
+  --background: #fff;
+  --color: #000;
 }
 
-html.dark {
-  /* background: #384955; */
-  background: #2b3e50;
-  color: #bbb;
+html {
+  background: var(--background);
+  color: var(--color);
 }
 
 /* 중복 속성 시작 */
@@ -67,6 +70,10 @@ html.dark {
   color: #82a584;
 }
 
+.page-header #search {
+  display: none;
+}
+
 .page-header .option {
   width: 10vw;
   display: flex;
@@ -91,12 +98,21 @@ html.dark {
   background-image: url(../img/language.png);
 }
 
-.option button:nth-of-type(3) {
-  background-image: url(../img/daymode.png);
-}
-
 .option button:hover {
   box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 20%);
+}
+
+.option input[type="checkbox"] {
+  display: none;
+}
+
+.option label {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: url(../img/daymode.png) no-repeat center center / 24px 24px;
+  box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
+  transition: box-shadow 0.5s;
 }
 /* 공통 - 헤더 기본 설정 끝 */
 
@@ -106,4 +122,8 @@ html.dark {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.page-footer span {
+  color: #000 !important;
 }

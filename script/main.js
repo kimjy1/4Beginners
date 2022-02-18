@@ -8,27 +8,47 @@ let language = document.querySelector(".option button:nth-of-type(2)");
 let quizcontainer = document.querySelector(".solution-container");
 
 // 소스코드 편집기(라이브러리) 시작
-window.onload = () => {
-  const textarea = document.getElementById("editor");
-  const editor = CodeMirror.fromTextArea(textarea, {
-    firstLineNumber: 1, // 시작 줄 번호 설정
-    lineNumbers: true, // 줄번호 표시 설정
-    lineWrapping: true, // true면 줄넘김O, false면 줄넘김X
-    tabSize: 2, // 들여쓰기 사이즈 설정
-    autoRefresh: true, // 초기화할 때 편집기가 표시되지 않은 경우 처음 표시될 때 새로 고쳐지도록 true로 설정할 수 있는 옵션
-    autofocus: false, // 포커스 설정
-    theme: "lucario", // 테마 설정(CDN)
-    autoCloseBrackets: true, // 괄호 자동으로 닫기 설정(CDN)
-    mode: "javascript", // 언어 설정(CDN)
-  });
-  editor.setSize("100%", "400");
-}
+const textarea = document.getElementById("editor");
+const editor = CodeMirror.fromTextArea(textarea, {
+  firstLineNumber: 1, // 시작 줄 번호 설정
+  lineNumbers: true, // 줄번호 표시 설정
+  lineWrapping: true, // true면 줄넘김O, false면 줄넘김X
+  tabSize: 2, // 들여쓰기 사이즈 설정
+  autoRefresh: true, // 초기화할 때 편집기가 표시되지 않은 경우 처음 표시될 때 새로 고쳐지도록 true로 설정할 수 있는 옵션
+  autofocus: false, // 포커스 설정
+  theme: "lucario", // 테마 설정(CDN)
+  autoCloseBrackets: true, // 괄호 자동으로 닫기 설정(CDN)
+  mode: "javascript", // 언어 설정(CDN)
+});
+editor.setSize("100%", "400");
+
 // 소스코드 편집기(라이브러리) 끝
 
 // 다크모드 이벤트 시작
-document.querySelector(".nightmode").addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
-  document.documentElement.style.transition = "all 0.3s";
+const changeTheme = document.querySelector("#theme-change");
+const isUserColorTheme = localStorage.getItem('color-theme');
+const isOsColorTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+const getUserTheme = () => (isUserColorTheme ? isUserColorTheme : isOsColorTheme);
+
+window.onload = () => {
+  if (getUserTheme === 'dark') {
+    localStorage.setItem('color-theme', 'dark');
+    document.documentElement.setAttribute('color-theme', 'dark');
+    changeTheme.setAttribute("checked", true);
+  } else {
+    localStorage.setItem('color-theme', 'light');
+    document.documentElement.setAttribute('color-theme', 'light');
+  }
+};
+
+changeTheme.addEventListener('click', event => {
+  if (event.target.checked) {
+    localStorage.setItem('color-theme', 'light');
+    document.documentElement.setAttribute('color-theme', 'dark');
+  } else {
+    localStorage.setItem('color-theme', 'light');
+    document.documentElement.setAttribute('color-theme', 'light');
+  }
 })
 // 다크모드 이벤트 끝
 
@@ -55,6 +75,21 @@ let ChangeImg = Math.floor(Math.random() * testarray.length);
 let i = 0;
 let answerIndex = 0;
 
+let clientAnswer = editor.getValue();
+let cssAnswer = cssQuiz[i].thisAnswer;
+
+let confirm = clientAnswer === cssAnswer;
+
+switch (confirm) {
+  case cssQuiz[0].thisAnswer[0]:
+    alert("성공!");
+    break;
+
+  case cssQuiz[0].thisAnswer[1]:
+    alert("성공!");
+    break;
+}
+
 // document.querySelector("#submit-btn").addEventListener("click", () => {
 //   let confirm = editor.getValue();
 //   for (let cssAnswer of cssQuiz[i].thisAnswer) {
@@ -72,7 +107,6 @@ let answerIndex = 0;
 //   quizguide.style.backgroundColor = testarray[ChangeImg];
 // }
 
-// 배열에 한 번씩 접근하여 (OR) 일치하는 것이 있으면 실행
 
 // document.querySelector("#btn1").onclick = () => {
 //   let confirm = editor.getValue();
