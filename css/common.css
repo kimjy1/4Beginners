@@ -1,16 +1,14 @@
 @charset "utf-8";
-:root[color-theme="dark"] {
-  --background: #2b3e50;
-  --color: #bbb;
-}
-:root[color-theme="light"] {
-  --background: #fff;
-  --color: #000;
-}
 
 html {
-  background: var(--background);
-  color: var(--color);
+  background-color: #fff;
+  color: #000;
+}
+
+/* 다크 모드 - addclass */
+html.dark-theme {
+  background: #2b3e50;
+  color: #bbb;
 }
 
 /* 중복 속성 시작 */
@@ -81,7 +79,7 @@ html {
   align-items: center;
 }
 
-.option button {
+.option .option-btn {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -90,20 +88,24 @@ html {
   transition: box-shadow 0.5s;
 }
 
-.option button:nth-of-type(1) {
+.option .search {
   background-image: url(../img/search.png);
 }
 
-.option button:nth-of-type(2) {
+.option .language-change {
   background-image: url(../img/language.png);
 }
 
-.option button:hover {
+.option-btn:hover {
   box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 20%);
 }
 
 .option input[type="checkbox"] {
   display: none;
+}
+
+.option input[type="checkbox"]:checked + label {
+  background-image: url(../img/nightmode.png);
 }
 
 .option label {
@@ -124,6 +126,6 @@ html {
   align-items: center;
 }
 
-.page-footer span {
-  color: #000 !important;
+.output span {
+  color: #000;
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="포트폴리오 사이트_김준영 : HTML, CSS, JAVASCRIPT 문제 출제_서브 사이트"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- 코드미러 스크립트(필수) CDN  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"
+      integrity="sha512-JpMCZgesTWh1iu/8ujURbwkJBgbgFWe3sTNCHdIuEvPwZuuN0nTUr2yawXahpgdEK7FOZUlW254Rp7AyDYJdjg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- 코드미러 스타일(필수) CDN  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css"
+      integrity="sha512-CCnciBUnVXwa6IQT9q8EmGcarNit9GdKI5nJnj56B1iu0LuD13Qn/GZ+IUkrZROZaBdutN718NK6mIXdUjZGqg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- lucario (다크)테마 CDN  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/lucario.min.css"
+      integrity="sha512-8CW1guslz3VSq681ZW1+pB3YXhfq5tGNqMsINg+1MyluwAu24D0LKlKVih8g/i1nYQOfhkenzNC0TZX9ZT5Nzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- 괄호 자동 닫기 기능 CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/addon/edit/closebrackets.min.js"
+      integrity="sha512-cCnOU69ESswPmMV3f9TR7WgctoJZliqGbJ8WeLn0VlUrngSsmtVopRf6OG/epbURGfNmY4RY6RzZ/mWkPQ/onw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- 언어 모드(자바스크립트) CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/javascript/javascript.min.js"
+      integrity="sha512-IS1FyxQkiJHT1SAvLXBaJu1UTFSIw0GT/DuzxHl69djqyLoEwGmR2davcZUnB8M7ppi9nfTGZR/vdfqmWt+i6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>Main Page</title>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header class="page-header">
+        <div class="logo"></div>
+        <nav class="menu">
+          <ul>
+            <li>게시판</li>
+            <li>공지사항</li>
+            <li>문제</li>
+            <li>편집기</li>
+          </ul>
+        </nav>
+        <input type="search" id="search" placeholder="검색" name="q" />
+        <div class="option">
+          <button
+            type="button"
+            aria-label="검색버튼"
+            class="option-btn search"
+          ></button>
+          <button
+            type="button"
+            aria-label="번역버튼"
+            class="option-btn language-change"
+          ></button>
+          <input type="checkbox" id="theme-change" />
+          <label for="theme-change"></label>
+        </div>
+      </header>
+      <!-- <main>
+        <div class="floating-island">
+          <a href="sub.html"><img src="img/sheep.png" alt="양 캐릭터" /></a>
+          <a href="sub.html"><img src="img/chicken.png" alt="닭 캐릭터" /></a>
+          <a href="sub.html"
+            ><img src="img/chipmunk.png" alt="다람쥐 캐릭터"
+          /></a>
+          <a href="sub.html"><img src="img/pig.png" alt="돼지 캐릭터" /></a>
+        </div>
+      </main> -->
+      <footer class="page-footer">
+        <span>© 2022 4Beginners. All Rights Reserved.</span>
+      </footer>
+    </div>
+
+    <script src="script/main.js" defer></script>
+  </body>
+</html>
