@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="포트폴리오 사이트_김준영 : HTML, CSS, JAVASCRIPT 문제 출제_서브 사이트"
+      content="포트폴리오 사이트_김준영 : HTML, CSS, JavaScript 문제 풀이_서브 사이트"
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/sub.css" />
     <!-- 코드미러 스크립트(필수) CDN  -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"
@@ -49,7 +49,7 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <title>Main Page</title>
+    <title>문제 풀이</title>
   </head>
 
   <body>
@@ -80,21 +80,20 @@
           <label for="theme-change"></label>
         </div>
       </header>
-      <!-- <main>
-        <div class="floating-island">
-          <a href="sub.html"><img src="img/sheep.png" alt="양 캐릭터" /></a>
-          <a href="sub.html"><img src="img/chicken.png" alt="닭 캐릭터" /></a>
-          <a href="sub.html"
-            ><img src="img/chipmunk.png" alt="다람쥐 캐릭터"
-          /></a>
-          <a href="sub.html"><img src="img/pig.png" alt="돼지 캐릭터" /></a>
-        </div>
-      </main> -->
+      <main class="question-container">
+        <img src="img/arrow_left.png" alt="왼쪽 화살표" />
+        <div class="question html"></div>
+        <div class="question css"></div>
+        <div class="question javascript"></div>
+        <div class="question j-query"></div>
+        <img src="img/arrow_right.png" alt="오른쪽 화살표" />
+      </main>
       <footer class="page-footer">
         <span>© 2022 4Beginners. All Rights Reserved.</span>
       </footer>
     </div>
 
-    <script src="script/main.js" defer></script>
+    <script src="script/common.js" defer></script>
+    <script src="script/sub.js" defer></script>
   </body>
 </html>

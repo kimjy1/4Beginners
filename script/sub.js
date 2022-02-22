@@ -1,10 +1,3 @@
-// 헤더 - 로고 누르면 홈페이지 리로드
-document.querySelector(".logo").addEventListener("click", () => location.reload());
-
-let logo = document.querySelector(".logo");
-let search = document.querySelector(".search");
-let language = document.querySelector(".language-change");
-
 // 소스코드 편집기(라이브러리) 시작
 // const textarea = document.getElementById("editor");
 // const editor = CodeMirror.fromTextArea(textarea, {
@@ -19,28 +12,7 @@ let language = document.querySelector(".language-change");
 //   mode: "javascript", // 언어 설정(CDN)
 // });
 // editor.setSize("100%", "400");
-
 // 소스코드 편집기(라이브러리) 끝
-
-// 다크모드 이벤트 시작
-document.querySelector("#theme-change").addEventListener("click", event => {
-  if (event.target.checked === true) {
-    document.documentElement.classList.add("dark-theme");
-    search.style.backgroundImage = "url(../img/night_search.png)";
-    language.style.backgroundImage = "url(../img/night_language.png)";
-    // document.querySelector(".page-header").classList.add("white-border-bottom");
-    // document.querySelector(".quiz-guide").classList.add("white-border-right");
-    // document.querySelector(".output").classList.add("white-borde-top");
-  } else {
-    document.documentElement.classList.remove("dark-theme");
-    search.style.backgroundImage = "url(../img/search.png)";
-    language.style.backgroundImage = "url(../img/language.png)";
-    // document.querySelector(".page-header").classList.remove("white-border-bottom");
-    // document.querySelector(".quiz-guide").classList.remove("white-border-right");
-    // document.querySelector(".output").classList.remove("white-borde-top");
-  }
-})
-// 다크모드 이벤트 끝
 
 // 랜덤 문제 객체(생성자 함수)
 function RandomQuiz(quizTitle, randomImage, thisAnswer) {
@@ -121,6 +93,3 @@ switch (confirm) {
 //     }
 //   }
 // }
-
-
-

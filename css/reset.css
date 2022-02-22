@@ -32,6 +32,5 @@ a:active {
 
 body {
   overflow: hidden scroll;
-  font-family: "MinSans-Medium", sans-serif;
-  font-size: 0.9em;
+  font: 0.9em "MinSans-Medium", sans-serif;
 }
