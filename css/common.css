@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+@font-face {
+  font-family: "MinSans-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   background-color: #fff;
   color: #000;
@@ -11,22 +20,27 @@ html.dark-theme {
   color: #bbb;
 }
 
+body {
+  overflow: hidden scroll;
+  font: 0.9em "MinSans-Medium", sans-serif;
+}
+
 /* 중복 속성 시작 */
-.page-header,
-.page-footer {
+.header,
+.footer {
   height: 100px;
 }
 
-.menu,
-.option {
+.header__nav,
+.header__option {
   height: 40px;
 }
 
-:where(.logo, .menu ul li, .option label):hover {
+:where(.header__logo, .header__nav ul li, .header__option label):hover {
   cursor: pointer;
 }
 
-:where(.option, .solution-container) button {
+:where(.header__option, .solution-container) button {
   all: unset;
   cursor: pointer;
 }
@@ -38,7 +52,7 @@ html.dark-theme {
 }
 
 /* 헤더 기본 설정 시작 */
-.page-header {
+.header {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -46,40 +60,40 @@ html.dark-theme {
 }
 
 /* 헤더 로고 */
-.page-header > .logo {
+.header__logo {
   width: 160px;
   height: 64px;
   background: url(../img/day_logo.png) no-repeat left center / 160px 64px;
 }
 
 /* 헤더 네비게이션 컨테이너 시작*/
-.page-header > .menu {
+.header > .header__nav {
   width: 40vw;
   line-height: 40px;
 }
 
-.menu > ul {
+.header__nav > ul {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 
-.menu > ul li:hover {
+.header__nav > ul li:hover {
   color: #82a584;
 }
 
-.page-header #search {
+.header #search {
   display: none;
 }
 
-.page-header .option {
+.header .header__option {
   width: 10vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.option .option-btn {
+.header__option .header__btn {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -88,27 +102,27 @@ html.dark-theme {
   transition: box-shadow 0.5s;
 }
 
-.option .search {
+.header__option .search {
   background-image: url(../img/search.png);
 }
 
-.option .language-change {
+.header__option .language-change {
   background-image: url(../img/language.png);
 }
 
-.option-btn:hover {
+.header__btn:hover {
   box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 20%);
 }
 
-.option input[type="checkbox"] {
+.header__option input[type="checkbox"] {
   display: none;
 }
 
-.option input[type="checkbox"]:checked + label {
+.header__option input[type="checkbox"]:checked + label {
   background-image: url(../img/nightmode.png);
 }
 
-.option label {
+.header__option label {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -116,16 +130,16 @@ html.dark-theme {
   box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 20%);
   transition: box-shadow 0.5s;
 }
+
+.header__option label:hover {
+  box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 20%);
+}
 /* 공통 - 헤더 기본 설정 끝 */
 
 /* 공통 - 푸터 기본 설정 */
-.page-footer {
+.footer {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.output span {
-  color: #000;
 }

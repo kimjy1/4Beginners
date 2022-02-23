@@ -48,47 +48,56 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
-    <title>문제 풀이</title>
+    <title>4Beginnersㅣ문제 풀이</title>
   </head>
 
   <body>
     <div id="wrap">
-      <header class="page-header">
-        <div class="logo"></div>
-        <nav class="menu">
+      <header class="header">
+        <a href="index.html"><div class="header__logo"></div></a>
+        <nav class="header__nav">
           <ul>
             <li>게시판</li>
             <li>공지사항</li>
             <li>문제</li>
-            <li>편집기</li>
+            <li>블로그</li>
           </ul>
         </nav>
         <input type="search" id="search" placeholder="검색" name="q" />
-        <div class="option">
+        <div class="header__option">
           <button
             type="button"
             aria-label="검색버튼"
-            class="option-btn search"
+            class="header__btn search"
           ></button>
           <button
             type="button"
             aria-label="번역버튼"
-            class="option-btn language-change"
+            class="header__btn language-change"
           ></button>
           <input type="checkbox" id="theme-change" />
           <label for="theme-change"></label>
         </div>
       </header>
-      <main class="question-container">
-        <img src="img/arrow_left.png" alt="왼쪽 화살표" />
-        <div class="question html"></div>
-        <div class="question css"></div>
-        <div class="question javascript"></div>
-        <div class="question j-query"></div>
-        <img src="img/arrow_right.png" alt="오른쪽 화살표" />
+      <main class="main" role="main">
+        <img
+          src="img/arrow_left.png"
+          alt="왼쪽 슬라이드 화살표"
+          class="main__arrow left-slider"
+        />
+        <div class="main__slider-wrapper">
+          <div class="main__question html"></div>
+          <div class="main__question css"></div>
+          <div class="main__question javascript"></div>
+          <div class="main__question j-query"></div>
+        </div>
+        <img
+          src="img/arrow_right.png"
+          alt="오른쪽 슬라이드 화살표"
+          class="main__arrow right-slider"
+        />
       </main>
-      <footer class="page-footer">
+      <footer class="footer">
         <span>© 2022 4Beginners. All Rights Reserved.</span>
       </footer>
     </div>

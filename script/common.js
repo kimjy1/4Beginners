@@ -1,5 +1,5 @@
 // 헤더 - 로고 누르면 홈페이지 리로드
-document.querySelector(".logo").addEventListener("click", () => location.reload());
+document.querySelector(".header__logo").addEventListener("click", () => location.reload());
 
 const logo = document.querySelector(".logo");
 const search = document.querySelector(".search");

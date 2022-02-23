@@ -1,16 +1,18 @@
 @charset "utf-8";
 
-/* 메인 - 퀴즈 섹션 컨테이너 */
-.floating-island__container {
+/* 하늘섬 컨테이너 */
+.main {
   width: 100%;
   height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
-.floating-island__container .floating-island {
+/* 하늘섬 */
+.main .main__floating-island {
+  /* width: 52vw; */
+  /* height: 56vw; */
   width: 1000px;
   height: 1080px;
   background: url(../img/main.png) no-repeat center center / 100% 100%;
@@ -18,6 +20,7 @@
   animation: floating 4s linear infinite;
 }
 
+/* 하늘섬 - 공중에 떠다니는 애니메이션 */
 @keyframes floating {
   0% {
     transform: translateY(0px);
@@ -64,86 +67,83 @@
   }
 }
 
-.floating-island a {
+.main__floating-island a {
   position: absolute;
   width: 30px;
   height: auto;
+}
+
+/* 동물 캐릭터 위 텍스트 */
+.main__floating-island a::after {
+  display: block;
+  position: absolute;
+  height: 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
   text-align: center;
 }
 
-.floating-island a:nth-of-type(1) {
+/* 동물 캐릭터(양) */
+.main__floating-island a:nth-of-type(1) {
   top: 33%;
   right: 25%;
 }
 
-.floating-island a:nth-of-type(1)::after {
+.main__floating-island a:nth-of-type(1)::after {
   content: "HTML";
-  position: absolute;
-  display: block;
-  background-color: #000;
-  color: #fff;
+  width: 50px;
   top: -20px;
   left: -10px;
-  width: 50px;
-  height: 20px;
-  border-radius: 5px;
 }
 
-.floating-island a:nth-of-type(2) {
+/* 동물 캐릭터(닭) */
+.main__floating-island a:nth-of-type(2) {
   top: 30%;
   right: 40%;
 }
 
-.floating-island a:nth-of-type(2)::after {
+.main__floating-island a:nth-of-type(2)::after {
   content: "CSS";
-  position: absolute;
+  width: 40px;
   top: -20px;
   left: -5px;
-  display: block;
-  width: 40px;
-  height: 20px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 5px;
 }
 
-.floating-island a:nth-of-type(3) {
+/* 동물 캐릭터(다람쥐) */
+.main__floating-island a:nth-of-type(3) {
   top: 35%;
   left: 45%;
 }
 
-.floating-island a:nth-of-type(3)::after {
+.main__floating-island a:nth-of-type(3)::after {
   content: "JavaScript";
-  position: absolute;
+  width: 90px;
   top: -20px;
   left: -35px;
-  display: block;
-  width: 90px;
-  height: 20px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 5px;
 }
 
-.floating-island a:nth-of-type(4) {
+/* 동물 캐릭터(돼지) */
+.main__floating-island a:nth-of-type(4) {
   top: 42%;
   left: 35%;
 }
 
-.floating-island a:nth-of-type(4)::after {
+.main__floating-island a:nth-of-type(4)::after {
   content: "J-Query";
-  position: absolute;
   top: 0;
   left: 30px;
-  display: block;
   width: 70px;
-  height: 20px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 5px;
 }
 
-.floating-island a img {
+/* 동물 캐릭터 이미지 */
+.main__floating-island a img {
   width: 100%;
+}
+
+@media all and (min-width: 1024px) {
+  #wrap main > .solution-container > .guide {
+    width: 768px;
+  }
 }
 /* 메인 - 퀴즈 섹션 */

@@ -93,3 +93,11 @@ switch (confirm) {
 //     }
 //   }
 // }
+
+// document.querySelector(".right-slider").addEventListener("click", () => {
+//   document.querySelector(".main__slider-wrapper").classList.add("move-right");
+// });
+
+document.querySelector(".right-slider").addEventListener("click", () => {
+  document.querySelector(".main__slider-wrapper").style.transform = "translateX(-73vw)";
+});
